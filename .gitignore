@@ -1,3 +1,4 @@
 *.gif
 test_clipboard.py
 test_os.py
+!1.gif
