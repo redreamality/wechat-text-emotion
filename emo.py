@@ -5,12 +5,22 @@ from PIL import Image, ImageFont, ImageDraw
 zihao = 100
 img = Image.open('1.gif')
 transparency = img.info['transparency']
-text = input('请输入需要转化的文字：\n')
-fn = text.split('//')[0]
-text = '\n'.join(text.split('//'))
+
+## 以上正常输入
+# text = input('请输入需要转化的文字：\n')
+# fn = text.split('//')[0]
+# text = '\n'.join(text.split('//'))
+# font = ImageFont.truetype(os.path.join("fonts", "C:/Windows/Fonts/冬青黑体W3.otf"), zihao) 
+
+## 以下特殊字符
+font = ImageFont.truetype(os.path.join("fonts", "C:/Windows/Fonts/ARIALUNI.TTF"), zihao)
+text = "点赞ლ(╹◡╹ლ)"
+fn = "点赞"
+
 im = Image.new("RGBA", (zihao*len(text) , zihao + 30), (0, 0, 0))
 dr = ImageDraw.Draw(im)
-font = ImageFont.truetype(os.path.join("fonts", "C:/Windows/Fonts/冬青黑体W3.otf"), zihao) #华文中宋字体
+
+
 x=1
 y=1
 textcolor = '#111'
